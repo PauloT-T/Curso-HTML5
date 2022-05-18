@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf8"/>
+    <title>Tudo sobre Google Glass</title>
+    <link rel="stylesheet" href="_css/estilo.css"/>
+    <link rel="stylesheet" href="_css/form.css"/>
+    <script>
+        function cal_total(){
+            var tot, qtd
+                qtd = parseInt(document.getElementById('cquant').value);
+            tot = qtd * 1500
+            document.getElementById('cpreco').value = tot
+        }
+    </script>
+</head>
+<script src="funcoes.js"></script>
+
+<body>
+<div id="interface">
+    <header id="cabecalho">
+        <hgroup>
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está chegando</h2>
+        </hgroup>
+
+        <img id="icone" src="_imagens/contato.png"  alt=""/>
+
+        <nav id="menu">
+            <h1>Menu Principal</h1>
+            <ul>
+                <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index1.html">Home</a></li>
+                <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+                <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+                <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+                <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="corpo-full">
+        <header id="cabecalho-artigo">
+            <hgroup>
+                <h3>Fale Conosco > Contato</h3>
+                <h1>Formulário de Contato</h1>
+                <h2>por Paulo de Tarso</h2>
+                <h3 class="direita"> Atualizado em 01/Maio/2022</h3>
+            </hgroup>
+        </header>
+        <form method="post" id="fcontato" action="mailto:paulo.tarso4747@gmail.com" oninput="cal_total();">
+            <fieldset id="usuario"><legend>Identificação do Usuário</legend>
+                <p><label for="cnome">Nome:</label><input type="text" name="tnome" id="cnome" size="30" maxlength="30" placeholder="Nome Completo"/></p>
+                <p><label for="csenha">Senha:</label><input type="password" name="tsenha" id="csenha" size="25" maxlength="25"
+                placeholder="Até 25 digitos"/></p>
+                <p><label for="cemail">E-mail:</label><input type="email" name="temail"
+                id="cemail" size="30" maxlength="35"></p>
+                <fieldset id="sexo"><legend>Sexo</legend>
+                 <input type="radio" name="sex" id="cmasc"/><label for="cmasc">Masculino</label><br/>
+                    <input type="radio" name="sex" id="cfem"/><label for="cfem">Feminino</label></fieldset>
+                <p><label for="cdata">Data de Nascimento:</label><input type="date" name="tdata" id="cdata"/></p>
+            </fieldset>
+
+            <fieldset id="end">
+                <legend id="endereco">Endereço do Usuário</legend>
+                <p><label for="crua">Logradouro:</label><input type="text" name="trua" id="crua" size="20" maxlength="40" placeholder="Rua, Av, Trav..."/></p>
+                <p><label for="cnum"> Número:<input type="number" name="tnum" id="cnum" min="0" max="9999"/></label></p>
+                <p><label for="cestado">Estado:</label><select name="testado" id="cestado">
+                    <optgroup label="Região Sudeste">
+                    <option value="RJ">Rio DeJaneiro</option>
+                    <option value="SP" selected>São Paulo</option>
+                    <option value="MG">Mina Gerais</option>
+                </optgroup>
+                    <optgroup label="Região Sul">
+                        <option value="PR">Paraná</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                    </optgroup>
+                </select></p>
+                <p><label for="ccidade">Cidade:<input type="text" name="tcidade" id="ccidade" size="30" maxlength="30" placeholder="Sua Cidade" list="cidades" ></label></p>
+                <datalist id="cidades">
+                    <option value="Rio de Janeiro"></option>
+                    <option value="Nova Iguaçu"></option>
+                    <option value="Niterói"></option>
+                    <option value="Belford Roxo"></option>
+                    <option value="São Paulo"></option>
+                </datalist>
+            </fieldset>
+
+            <fieldset id="mensagemUser">
+                <legend id="mensagem">Mensagem do Usuário</legend>
+                <p><label for="curg">Grau de Urgência: Min<input type="range" name="tcurg" id="curg" min="0" max="10" step="2">Max</label></p>
+                <p><label for="cmensagem">Mensagem:</label>
+                <textarea name="tmensagem" id="cmensagem" cols="35" rows="5" placeholder="Deixe aqui sua mensagem"></textarea></p>
+            </fieldset>
+
+            <fieldset id="glass">
+                <legend id="pedido">Quero um Google Glass</legend>
+                <p><input type="checkbox" name="tglass" id="cglass">
+                    <label for="cglass">Gostaria de adquirir um Google Glass quando disponível</label></p>
+                <p><label for="ccor">Cor:</label>
+                <input type="color" name="tcor" id="ccor" value="#0000ff"></p>
+                <p><label for="cquant">Quantidade:</label>
+                <input type="number" name="tquant" id="cquant" min="0" max="20" value="0"></p>
+                <p><label for="cpreco">Preço Total: R$</label>
+                <input type="text" name="tpreco" id="cpreco" placeholder="Total a Pagar" readonly></p>
+            </fieldset>
+
+
+            <input type="image" name="botao" src="_imagens/botao-enviar.png" alt=" Imagem de Botao de enviar"/>
+        </form>
+
+<footer id="rodape">
+    <p>Copyright 2022 - by Paulo de Tarso<br/> <a href="https://web.facebook.com/paulo.tarso.524596/" target="_blank"> Facebook</a> | <a href="https://twitter.com/SouulHunter" target="_blank">Twitter</a></p>
+</footer>
+    </section>
+</div>
+</body>
+</html>
