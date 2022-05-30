@@ -33,7 +33,7 @@ a:hover{
 /* formatação de imagens com legendas */
 header#cabecalho img#icone{
     position: absolute;
-    left: 740px;
+    left: 1200px;
     top:50px;
 }
 
@@ -96,7 +96,7 @@ nav#menu ul{
     text-transform: uppercase;
     position: absolute;
     top:-20px;
-    left:306px;
+    left: 773px;
 }
 nav#menu li{
     display: inline-block;
